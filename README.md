@@ -11,7 +11,9 @@ Installation
 Linux:
 
 ```
-qmake
+mkdir build.release
+cd build.release
+cmake ..
 make
 sudo make install
 ```
@@ -19,7 +21,9 @@ sudo make install
 Windows (MSVC):
 
 ```
-qmake
+mkdir build.release
+cd build.release
+cmake ..
 nmake
 nmake install
 ```
@@ -27,7 +31,9 @@ nmake install
 Windows (MinGW):
 
 ```
-qmake
+mkdir build.release
+cd build.release
+cmake ..
 mingw32-make
 mingw32-make install
 ```
@@ -36,7 +42,9 @@ Getting started
 ------------
 
 ```
-CONFIG += jsonserializer
+find_package(QJsonSerializer)
+....
+target_link_libraries(YouProjectTarget PRIVATE QJsonSerializer::QJsonSerializer)
 ```
 
 ```C++
